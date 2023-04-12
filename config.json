@@ -1,0 +1,14 @@
+{
+  "stage-1": {
+    "mlm_probability": 0.15,
+    "do_lower_case": true,
+    "unsupervised_train_data_path": "../data/unsupervised_train_sample.txt",
+    "checkpoint_save_path": "./checkpoints",
+    "pretrained_weights_path": "../pretrained_weights",
+    "base_len": 50,
+    "max_len": 100,
+    "batch_size": 64,
+    "lr": 5e-5,
+    "epoch_num": 1
+  }
+}

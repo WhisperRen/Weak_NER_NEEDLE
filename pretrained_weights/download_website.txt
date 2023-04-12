@@ -1,0 +1,1 @@
+https://huggingface.co/clue/albert_chinese_tiny/tree/main
