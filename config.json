@@ -10,5 +10,25 @@
     "batch_size": 64,
     "lr": 5e-5,
     "epoch_num": 1
+  },
+  "stage-2": {
+    "num_labels": 31,
+    "do_lower_case": true,
+    "pretrained_weights_stage1": "./results_from_stage1",
+    "stage2_final_checkpoint_path": "./stage2_final_checkpoints",
+    "completed_data_path": "./completed_data",
+    "label_path": "../data/label.txt",
+    "supervised_checkpoint_save_path": "./supervised_checkpoints",
+    "supervised_train_data_path": "../data/supervised_train_sample.txt",
+    "weak_supervised_train_data_path": "../data/weak_supervised_train_sample.txt",
+    "weak_supervised_val_data_path": "../data/weak_supervised_val_sample.txt",
+    "base_len": 50,
+    "max_len": 100,
+    "batch_size": 64,
+    "lr_pretrained": 5e-5,
+    "lr_crf": 3e-3,
+    "epoch_num_supervised": 2,
+    "epoch_num_weak": 1,
+    "bins_num": 40
   }
 }

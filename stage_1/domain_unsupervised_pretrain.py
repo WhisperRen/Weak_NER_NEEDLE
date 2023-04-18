@@ -23,7 +23,6 @@ if __name__ == '__main__':
         os.makedirs(config.get('checkpoint_save_path'))
 
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-    config['device'] = device
 
     tokenizer = BertTokenizer.from_pretrained(config.get('pretrained_weights_path'),
                                               do_lower_case=config.get('do_lower_case'))
@@ -33,7 +32,7 @@ if __name__ == '__main__':
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer,
                                                     mlm=True,
                                                     mlm_probability=config.get('mlm_probability'))
-    mlm = AlbertForMaskedLM.from_pretrained(config.get('pretrained_weights_path'))
+    mlm = AlbertForMaskedLM.from_pretrained(config.get('pretrained_weights_path')).to(device)
 
     training_args = TrainingArguments(
         output_dir=config.get('checkpoint_save_path'),
