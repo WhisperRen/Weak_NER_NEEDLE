@@ -30,5 +30,20 @@
     "epoch_num_supervised": 2,
     "epoch_num_weak": 1,
     "bins_num": 40
+  },
+  "stage-3": {
+    "num_labels": 31,
+    "do_lower_case": true,
+    "pretrained_weights_stage2": "../stage_2/stage2_final_checkpoints",
+    "label_path": "../data/label.txt",
+    "checkpoint_save_path": "./checkpoints",
+    "supervised_train_data_path": "../data/supervised_train_sample.txt",
+    "supervised_test_data_path": "../data/supervised_test_sample.txt",
+    "base_len": 50,
+    "max_len": 100,
+    "batch_size": 64,
+    "lr_pretrained": 5e-5,
+    "lr_crf": 3e-3,
+    "epoch_num": 3
   }
 }
